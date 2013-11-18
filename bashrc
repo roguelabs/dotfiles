@@ -9,3 +9,6 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 #alias venv='source /home/roger/python/django-venv/bin/activate && cd /home/roger/python/projects/Cloudpreserve'
+alias tmux='tmux -2'
+
+export TERM=xterm-256color
