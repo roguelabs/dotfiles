@@ -47,7 +47,7 @@ ab rsr Roger Schmid <rs@roguelabs.net>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256
 set background=dark
-colorscheme wombat256
+colorscheme wombat256mod
 
 
 if &term =~ '256color'
