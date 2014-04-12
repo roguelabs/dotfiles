@@ -12,3 +12,4 @@ PS1='[\u@\h \W]\$ '
 alias tmux='tmux -2'
 
 export TERM=xterm-256color
+export EDITOR=vim
