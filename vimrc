@@ -47,7 +47,8 @@ ab rsr Roger Schmid <rs@roguelabs.net>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256
 set background=dark
-colorscheme wombat256mod
+let g:solarized_termcolors=256
+colorscheme solarized
 
 
 if &term =~ '256color'
