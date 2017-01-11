@@ -19,7 +19,7 @@ set hlsearch
 set ignorecase smartcase
 
 " highlight current line
-set cursorline
+"set cursorline
 set cmdheight=1
 
 " display incomplete commands
@@ -37,23 +37,3 @@ set wildmenu
 
 set foldmethod=manual
 set nofoldenable
-
-" Abbreviations
-ab rsr Roger Schmid <rs@roguelabs.net>
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" COLOR
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set t_Co=256
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
-
-
-if &term =~ '256color'
-" disable Background Color Erase (BCE) so that color schemes
-" render properly when inside 256-color tmux and GNU screen.
-" see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-  set t_ut=
-endif
