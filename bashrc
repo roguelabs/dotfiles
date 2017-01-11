@@ -6,6 +6,8 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
+alias ll='ls -lha'
+alias ltr='ls -lhatr'
 PS1='[\u@\h \W]\$ '
 
 #alias venv='source /home/roger/python/django-venv/bin/activate && cd /home/roger/python/projects/Cloudpreserve'
