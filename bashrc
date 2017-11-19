@@ -26,11 +26,10 @@ export PATH=~/bin:$PATH:$GOPATH/bin
 
 
 # git stuff
-#source /usr/share/bash-completion/bash_completion
-#source /usr/share/git-core/contrib/completion/git-prompt.sh
-#export GIT_PS1_SHOWDIRTYSTATE=1
-#export GIT_PS1_SHOWCOLORHINTS=1
-#PROMPT_COMMAND='__git_ps1 "[\u@\h:\w]" "\n\\\$ "'
-
-source /home/roger/.oh-my-git/prompt.sh
 source /usr/share/bash-completion/bash_completion
+source /usr/share/git-core/contrib/completion/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWCOLORHINTS=1
+PROMPT_COMMAND='__git_ps1 "[\u@\h:\w]" "\n\\\$ "'
+
+#source /home/roger/.oh-my-git/prompt.sh
