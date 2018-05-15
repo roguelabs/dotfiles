@@ -32,6 +32,7 @@ alias ltr='ls -lhatr'
 alias xclip='xclip -selection primary'
 alias tmux='tmux -2'
 
+
 # enable bash completion in interactive shells
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -45,8 +46,8 @@ fi
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWCOLORHINTS=1
 
-if [ "$TERM" = xterm-256color ]; then
-  force_color_prompt=yes
+if [ "$TERM" = xterm-256color -o  "$TERM" = screen ]; then
+    force_color_prompt=yes
 fi
 
 if [ -n "$force_color_prompt" ]; then
@@ -60,10 +61,12 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+#export PS1="\033]0;\u@\h\007${debian_chroot:+($debian_chroot)}\[\033[32;49m\][\u@\h:\[\033[37;49m\]\w\[\033[00m\]\[\033[32;49m\]]\[\033[00m\]\n\$ "
+
 if [ "$color_prompt" = yes ]; then
-    PROMPT_COMMAND='__git_ps1 "\033]0;\u@\h\007${debian_chroot:+($debian_chroot)}\[\033[32;49m\][\u@\h:\[\033[37;49m\]\w\[\033[00m\]\[\033[32;49m\]]\[\033[00m\]" "\n\$ "'
+    PROMPT_COMMAND='__git_ps1 "\033]0;\u@\h\007${debian_chroot:+($debian_chroot)}$(if [ $VIRTUAL_ENV ]; then echo "($(basename ${VIRTUAL_ENV}))"; fi)\[\033[32;49m\][\u@\h:\[\033[37;49m\]\w\[\033[00m\]\[\033[32;49m\]]\[\033[00m\]" "\n \$ "'
 else
-    PROMPT_COMMAND='__git_ps1 "\033]0;\u@\h\007${debian_chroot:+($debian_chroot)}[\u@\h:\w]" "\n\$ "'
+    PROMPT_COMMAND='__git_ps1 "\033]0;\u@\h\007${debian_chroot:+($debian_chroot)}$(if [ $VIRTUAL_ENV ]; then echo "($(basename ${VIRTUAL_ENV}))"; fi)[\u@\h:\w]" "${PYTHON_VIRTUALENV} \n\$ "'
 fi
 unset color_prompt force_color_prompt
 
