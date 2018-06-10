@@ -43,6 +43,9 @@ if ! shopt -oq posix; then
 fi
 
 # git stuff
+if ! type __git_ps1 &> /dev/null && [ -e /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
+  source /usr/share/git-core/contrib/completion/git-prompt.sh
+fi
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWCOLORHINTS=1
 
@@ -64,7 +67,7 @@ fi
 #export PS1="\033]0;\u@\h\007${debian_chroot:+($debian_chroot)}\[\033[32;49m\][\u@\h:\[\033[37;49m\]\w\[\033[00m\]\[\033[32;49m\]]\[\033[00m\]\n\$ "
 
 if [ "$color_prompt" = yes ]; then
-    PROMPT_COMMAND='__git_ps1 "\033]0;\u@\h\007${debian_chroot:+($debian_chroot)}$(if [ $VIRTUAL_ENV ]; then echo "($(basename ${VIRTUAL_ENV}))"; fi)\[\033[32;49m\][\u@\h:\[\033[37;49m\]\w\[\033[00m\]\[\033[32;49m\]]\[\033[00m\]" "\n \$ "'
+    PROMPT_COMMAND='__git_ps1 "\033]0;\u@\h\007${debian_chroot:+($debian_chroot)}$(if [ $VIRTUAL_ENV ]; then echo "($(basename ${VIRTUAL_ENV}))"; fi)\[\033[32;49m\][\u@\h:\[\033[37;49m\]\w\[\033[00m\]\[\033[32;49m\]]\[\033[00m\]" "\n\$ "'
 else
     PROMPT_COMMAND='__git_ps1 "\033]0;\u@\h\007${debian_chroot:+($debian_chroot)}$(if [ $VIRTUAL_ENV ]; then echo "($(basename ${VIRTUAL_ENV}))"; fi)[\u@\h:\w]" "${PYTHON_VIRTUALENV} \n\$ "'
 fi
