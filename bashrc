@@ -43,8 +43,8 @@ if ! shopt -oq posix; then
 fi
 
 # git stuff
-if ! type __git_ps1 &> /dev/null && [ -e /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
-  source /usr/share/git-core/contrib/completion/git-prompt.sh
+if ! type __git_ps1 &> /dev/null && [ -e /usr/share/git/completion/git-prompt.sh ]; then
+  source /usr/share/git/completion/git-prompt.sh
 fi
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWCOLORHINTS=1
@@ -85,3 +85,7 @@ unset color_prompt force_color_prompt
 # go stuff
 export GOPATH=$HOME/workspace/go
 export PATH=~/bin:$PATH:$GOPATH/bin
+
+# virtualenvwrapper
+export WORKON_HOME=~/workspace/virtualenvs
+source /usr/bin/virtualenvwrapper.sh
