@@ -86,6 +86,12 @@ unset color_prompt force_color_prompt
 export GOPATH=$HOME/workspace/go
 export PATH=~/bin:$PATH:$GOPATH/bin
 
+# aws stuff
+complete -C '/usr/bin/aws_completer' aws
+
 # virtualenvwrapper
 export WORKON_HOME=~/workspace/virtualenvs
 source /usr/bin/virtualenvwrapper.sh
+
+# qt hidpi fix
+##export QT_AUTO_SCREEN_SCALE_FACTOR=4
