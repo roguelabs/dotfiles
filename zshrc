@@ -74,7 +74,15 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git minikube ansible colorize golang helm kubectl pip tmux zsh_reload jump percol)
+plugins=(docker 
+         git 
+         colorize 
+         golang 
+         kubectl
+         pip
+         tmux zsh_reload
+         jump 
+         percol)
 
 
 # User configuration
@@ -127,8 +135,6 @@ alias tmux='tmux -2'
 export GOPATH=$HOME/workspace/go
 export PATH=~/bin:$PATH:$GOPATH/bin
 
-
 # virtualenvwrapper
 export WORKON_HOME=~/workspace/virtualenvs
 source /usr/bin/virtualenvwrapper.sh
-
