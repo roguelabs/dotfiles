@@ -3,3 +3,5 @@
 # Please adapt and uncomment the following lines:
 	name = Roger Schmid
 	email = rs@roguelabs.net
+[alias]
+	hist = log --all --graph --decorate --oneline
