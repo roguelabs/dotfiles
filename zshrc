@@ -142,3 +142,5 @@ export WORKON_HOME=~/workspace/virtualenvs
 source /usr/bin/virtualenvwrapper.sh
 
 unsetopt share_history
+
+screenfetch
