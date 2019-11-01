@@ -4,4 +4,9 @@
 	name = Roger Schmid
 	email = rs@roguelabs.net
 [alias]
-	hist = log --all --graph --decorate --oneline
+    hist = log --all --graph --decorate --oneline
+
+[http]
+
+[http "https://gitit.post.ch"]
+    cookieFile = "/home/roger/Downloads/cookies.txt"
