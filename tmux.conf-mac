@@ -1,0 +1,86 @@
+set -g mode-keys vi
+#---------------------------
+
+# Ctrl-a like screen
+#---------------------------
+unbind C-b
+set -g prefix C-a
+bind a send-prefix
+
+#---------------------------
+#
+#---------------------------
+#set -g terminal-overrides 'xterm*:smcup@:rmcup@'
+set -g default-terminal "screen-256color"
+set -g base-index 1
+
+
+#---------------------------
+# Some sane keybindings
+#---------------------------
+
+bind -n S-down new-window
+bind -n S-left prev
+bind -n S-right next
+bind -n C-left swap-window -t -1
+bind -n C-right swap-window -t +1
+
+unbind %
+bind | split-window -h
+bind _ split-window -v
+
+# prevent renaming of window title to last command
+set-option -g allow-rename off
+
+# easy reload of config
+bind r source ~/.tmux.conf\; display "~/.tmux.conf sourced!"
+
+
+set -g mouse on
+
+
+######################
+### DESIGN CHANGES ###
+######################
+## colour24 = light blue
+## colour23 = petrol
+## colour246 = light gray
+## colour236 = dark gray
+## colour130 = orange
+## colour166 = orange bright
+
+
+set -g clock-mode-style 24
+
+#set -g message-command-style 'bg=black,fg=white'
+#set -g message-style 'bg=black,fg=white'
+
+# Status line general
+#set -g status-bg colour236
+#set -g status-fg colour130
+
+# Status left
+#set -g status-left-style 'bg=black,fg=colour130'
+#set -g status-left ' [#S] |'
+
+# Status right
+#set -g status-right-style 'bg=colour130,fg=colour236'
+
+
+
+#set -g mode-style 'bg=colour166,fg=colour236'
+
+#set -g window-active-style 'default'
+#set -g window-style 'default'
+#set -g window-status-current-style 'bg=colour166,fg=colour236'
+#set -g window-status-style 'bg=colour236,fg=colour130'
+
+#set -g pane-border-style 'bg=default,fg=colour23'
+#set -g pane-active-border-style 'bg=default,fg=colour24'
+
+#set -g window-status-format '[#I:#W#F]'
+#set -g window-status-current-format ' #[fg=white,bold,bg=black][#I:#W#F]'
+#set -g window-status-separator '|'
+
+source /usr/lib/python3.8/site-packages/powerline/bindings/tmux/powerline.conf
+

@@ -1,0 +1,12 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Roger Schmid
+	email = rs@roguelabs.net
+[alias]
+    hist = log --all --graph --decorate --oneline
+
+[http]
+
+[http "https://gitit.post.ch"]
+    cookieFile = "/home/roger/Downloads/cookies.txt"
