@@ -11,7 +11,7 @@
 #promptinit
 #prompt elite2
 # If you come from bash you might have to change your $PATH.
-export PATH=/usr/local/bin:$PATH
+export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 ZSH=~/.oh-my-zsh
@@ -153,6 +153,9 @@ source <(doctl completion zsh)
 
 # microk8s completion
 #source <(microk8s.kubectl completion zsh)
+
+# helm completion
+source <(helm completion zsh)
 
 unsetopt share_history
 #screenfetch

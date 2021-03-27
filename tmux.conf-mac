@@ -19,7 +19,7 @@ set -g base-index 1
 # Some sane keybindings
 #---------------------------
 
-bind -n S-down new-window
+#bind -n S-down new-window
 bind -n S-left prev
 bind -n S-right next
 bind -n C-left swap-window -t -1
@@ -30,57 +30,47 @@ bind | split-window -h
 bind _ split-window -v
 
 # prevent renaming of window title to last command
-set-option -g allow-rename off
+#set-option -g allow-rename off
 
 # easy reload of config
 bind r source ~/.tmux.conf\; display "~/.tmux.conf sourced!"
 
 
 set -g mouse on
-
-
-######################
-### DESIGN CHANGES ###
-######################
-## colour24 = light blue
-## colour23 = petrol
-## colour246 = light gray
-## colour236 = dark gray
-## colour130 = orange
-## colour166 = orange bright
-
-
 set -g clock-mode-style 24
 
-#set -g message-command-style 'bg=black,fg=white'
-#set -g message-style 'bg=black,fg=white'
-
 # Status line general
-#set -g status-bg colour236
-#set -g status-fg colour130
+set -g status-bg colour235
+set -g status-fg colour8
+
+
+
+#set -g status-position top
 
 # Status left
-#set -g status-left-style 'bg=black,fg=colour130'
-#set -g status-left ' [#S] |'
+set -g status-left-style 'bg=colour235,fg=colour38'
+set -g status-left '#{session_name} '
 
 # Status right
-#set -g status-right-style 'bg=colour130,fg=colour236'
+set -g status-right-style 'bg=colour235,fg=colour38'
+#set -g status-right-style 'none'
+
+# make statusline 2 rows high
+#set -g status 2
+# first statusline uses defaults,
+# second statusline as follows:
+#set -g status-format[1] 'WindowIndex: #{window_index} BufferName: #{buffer_name} ClientName: #{client_name} InsertFlag: #{insert_flag} PaneIndex: #{pane_index}'
 
 
 
-#set -g mode-style 'bg=colour166,fg=colour236'
+set -g window-status-current-format '#{window_index}:#{window_name}#{window_flags}'
+set -g window-status-current-style 'bg=colour238,fg=colour7'
+set -g window-status-style 'bg=colour235,fg=colour38'
+set -g window-status-separator '|'
 
-#set -g window-active-style 'default'
-#set -g window-style 'default'
-#set -g window-status-current-style 'bg=colour166,fg=colour236'
-#set -g window-status-style 'bg=colour236,fg=colour130'
+#set -g visual-activity both
 
-#set -g pane-border-style 'bg=default,fg=colour23'
-#set -g pane-active-border-style 'bg=default,fg=colour24'
+#set automatic-rename on
 
-#set -g window-status-format '[#I:#W#F]'
-#set -g window-status-current-format ' #[fg=white,bold,bg=black][#I:#W#F]'
-#set -g window-status-separator '|'
-
-source /usr/lib/python3.8/site-packages/powerline/bindings/tmux/powerline.conf
+#source /usr/lib/python3.8/site-packages/powerline/bindings/tmux/powerline.conf
 
