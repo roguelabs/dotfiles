@@ -11,7 +11,7 @@
 #promptinit
 #prompt elite2
 # If you come from bash you might have to change your $PATH.
-export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
+export PATH=/opt/homebrew/opt/python/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 ZSH=~/.oh-my-zsh
@@ -90,6 +90,8 @@ plugins=(docker
          percol
          terraform
          oc
+         zsh-autosuggestions
+         zsh-syntax-highlighting
      )
 
 
@@ -138,6 +140,7 @@ alias la='ls -lha'
 alias ltr='ls -lhatr'
 alias xclip='xclip -selection primary'
 alias tmux='tmux -2'
+alias k=kubectl
 
 
 export GOPATH=$HOME/workspace/go
@@ -159,3 +162,14 @@ source <(helm completion zsh)
 
 unsetopt share_history
 #screenfetch
+#
+
+
+# autosuggest keybindings
+bindkey '^ ' autosuggest-accept
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+

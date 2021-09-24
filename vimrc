@@ -5,7 +5,7 @@ set nocompatible
 set history=10000
 
 
-set expandtab "convert tabs to spaces
+#set expandtab "convert tabs to spaces
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
