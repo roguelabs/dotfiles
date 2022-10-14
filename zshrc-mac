@@ -86,7 +86,6 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(docker 
-         docker-machine
          git 
          colorize 
          golang 
@@ -97,8 +96,6 @@ plugins=(docker
          percol
          terraform
          oc
-         zsh-autosuggestions
-         zsh-syntax-highlighting
      )
 
 
@@ -156,7 +153,7 @@ export PATH=~/bin:$PATH:$GOPATH/bin
 # virtualenvwrapper
 #export WORKON_HOME=~/workspace/virtualenvs
 #if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-eval "$(pyenv init -)"
+#eval "$(pyenv init -)"
 
 # doctl completion
 source <(doctl completion zsh)
@@ -175,10 +172,10 @@ unsetopt share_history
 # autosuggest keybindings
 bindkey '^ ' autosuggest-accept
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init --path)"
+#eval "$(pyenv init -)"
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
